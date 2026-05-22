@@ -20,6 +20,7 @@ A collection of customizations, scripts, and workflows for [Claude Code](https:/
 | [ceo-council](./skills/ceo-council/) | Parallel sub-agents as C-level experts for strategic analysis |
 | [claude-md-writer](./skills/claude-md-writer/) | Create and refactor CLAUDE.md files following best practices |
 | [gh-issues](./skills/gh-issues/) | Manage GitHub Issues via CLI with session context |
+| [meeting-copilot](./skills/meeting-copilot/) | Live meeting dashboard: prepare, update from transcript chunks, close with decisions and follow-ups |
 | [paperclip-api](./skills/paperclip-api/) | Manage Paperclip AI agent companies via CLI and REST API |
 | [readme-generator](./skills/readme-generator/) | Human-focused README files with proper structure |
 | [ris-draft](./skills/ris-draft/) | One self-contained HTML diagram in flat engineering blueprint style — architecture, flows, spec sheets |

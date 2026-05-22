@@ -7,7 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.16.0] - 2026-05-22
+
 ### Added
+- **meeting-copilot** skill — live meeting dashboard for prepare/update/close workflows
+  - Creates local HTML dashboards for calls
+  - Uses transcript delta processing for live updates
+  - Extracts questions, topic progress, decisions, risks, action items, and follow-up drafts
+  - Includes privacy rules for sanitized public exports
 - **ris-draft** skill — generate one self-contained HTML page with a technical diagram in flat engineering blueprint style
   - Strict visual rules: flat, outlined, monochrome, system fonts only, no external CDN
   - Supports four diagram types: architecture, system flow, technical spec sheet, component map
@@ -209,7 +216,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Custom statusline with cost tracking, context usage, git branch
 - Basic repository structure
 
-[Unreleased]: https://github.com/serejaris/ris-claude-code/compare/v1.15.1...HEAD
+[Unreleased]: https://github.com/serejaris/ris-claude-code/compare/v1.16.0...HEAD
+[1.16.0]: https://github.com/serejaris/ris-claude-code/compare/v1.15.1...v1.16.0
 [1.15.1]: https://github.com/serejaris/ris-claude-code/compare/v1.15.0...v1.15.1
 [1.15.0]: https://github.com/serejaris/ris-claude-code/compare/v1.14.0...v1.15.0
 [1.14.0]: https://github.com/serejaris/ris-claude-code/compare/v1.13.0...v1.14.0
