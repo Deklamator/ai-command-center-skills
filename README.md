@@ -15,6 +15,7 @@ A collection of customizations, scripts, and workflows for [Claude Code](https:/
 
 | Skill | What it does |
 |-------|-------------|
+| [art-director](./skills/art-director/) | Iterative visual style search with prompts, process logs, assets, and decision graphs |
 | [product-data-audit](./skills/product-data-audit/) | Deep product/business audit → interactive HTML report with 12 sections |
 | [cc-analytics](./skills/cc-analytics/) | HTML reports of Claude Code usage statistics |
 | [ceo-council](./skills/ceo-council/) | Parallel sub-agents as C-level experts for strategic analysis |
@@ -25,13 +26,16 @@ A collection of customizations, scripts, and workflows for [Claude Code](https:/
 | [meeting-copilot](./skills/meeting-copilot/) | Live meeting dashboard: prepare, update from transcript chunks, close with decisions and follow-ups |
 | [paperclip-api](./skills/paperclip-api/) | Manage Paperclip AI agent companies via CLI and REST API |
 | [readme-generator](./skills/readme-generator/) | Human-focused README files with proper structure |
+| [ris-manager](./skills/ris-manager/) | Bidirectional bridge between the current session and GitHub Issues |
+| [ris-prioritize](./skills/ris-prioritize/) | Rank backlogs with RICE, ICE, MoSCoW, or Kano and produce a decision log |
 | [ris-draft](./skills/ris-draft/) | One self-contained HTML diagram in flat engineering blueprint style — architecture, flows, spec sheets |
 | [tg-bot-ops](./skills/tg-bot-ops/) | Reusable operations playbook for Telegram bots and Telegram-to-agent gateways |
 
-### Design Skills
+### Design and Media Skills
 
 | Skill | Use When |
 |-------|----------|
+| [art-director](./skills/art-director/) | Iterative art direction, visual style search, generation branches, and decision graphs |
 | [design-minimal](./skills/design-minimal/) | Reading-first standalone HTML pages: dashboards, briefs, handouts, operating maps, reports |
 | [ris-draft](./skills/ris-draft/) | Technical diagrams in flat engineering blueprint style: architecture, system flows, spec sheets |
 
@@ -64,6 +68,8 @@ graph LR
 | [task-routing](./skills/task-routing/) | Route issues to the correct repo using routing config |
 | [weekly-planning](./skills/weekly-planning/) | Retro findings + backlog → prioritized outcomes with Eisenhower matrix |
 | [weekly-retro](./skills/weekly-retro/) | Structured retrospective: gather data, interview founder, capture findings |
+| [ris-manager](./skills/ris-manager/) | Sync session work into GitHub Issues and query cross-repo task state |
+| [ris-prioritize](./skills/ris-prioritize/) | Rank requirements and backlogs before planning |
 
 ## Other
 

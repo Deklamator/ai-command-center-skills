@@ -7,6 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.20.0] - 2026-06-01
+
+### Added
+- **art-director** skill - iterative visual style search for media assets
+  - Coordinates branch prompts, process logs, generated or collected assets, HTML previews, and decision graphs
+  - Adds iteration-cluster rules for selected, rejected, shown, and output nodes
+  - Includes privacy gates for private chats, screenshots, auth material, billing records, customer records, infrastructure details, non-public repository links, and unsafe source material
+  - Includes bilingual docs (README.md + README.ru.md), public-safe snippets, and a starter HTML template
+
 ## [1.19.0] - 2026-06-01
 
 ### Added
@@ -243,7 +252,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Custom statusline with cost tracking, context usage, git branch
 - Basic repository structure
 
-[Unreleased]: https://github.com/serejaris/ris-claude-code/compare/v1.19.0...HEAD
+[Unreleased]: https://github.com/serejaris/ris-claude-code/compare/v1.20.0...HEAD
+[1.20.0]: https://github.com/serejaris/ris-claude-code/compare/v1.19.0...v1.20.0
 [1.19.0]: https://github.com/serejaris/ris-claude-code/compare/v1.18.0...v1.19.0
 [1.18.0]: https://github.com/serejaris/ris-claude-code/compare/v1.17.0...v1.18.0
 [1.17.0]: https://github.com/serejaris/ris-claude-code/compare/v1.15.1...v1.17.0

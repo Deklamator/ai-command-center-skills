@@ -13,6 +13,7 @@
 
 | Скилл | Что делает |
 |-------|-----------|
+| [art-director](./skills/art-director/) | Итеративный поиск визуального стиля с промптами, журналом процесса, ассетами и графами решений |
 | [product-data-audit](./skills/product-data-audit/) | Глубокий аудит продукта/бизнеса — интерактивный HTML-отчёт на 12 секций |
 | [cc-analytics](./skills/cc-analytics/) | HTML-отчёты статистики использования Claude Code |
 | [ceo-council](./skills/ceo-council/) | Параллельные субагенты в роли C-level экспертов для стратегического анализа |
@@ -23,13 +24,16 @@
 | [meeting-copilot](./skills/meeting-copilot/) | Live dashboard для встреч: подготовка, обновление из транскрипта, закрытие с решениями и follow-up |
 | [paperclip-api](./skills/paperclip-api/) | Управление компаниями AI-агентов Paperclip через CLI и REST API |
 | [readme-generator](./skills/readme-generator/) | Человеко-ориентированные README с правильной структурой |
+| [ris-manager](./skills/ris-manager/) | Двусторонний мост между текущей сессией и GitHub Issues |
+| [ris-prioritize](./skills/ris-prioritize/) | Ранжирование бэклогов через RICE, ICE, MoSCoW или Kano |
 | [ris-draft](./skills/ris-draft/) | Одна HTML-диаграмма в стиле плоского инженерного чертежа — архитектура, потоки, spec sheets |
 | [tg-bot-ops](./skills/tg-bot-ops/) | Переиспользуемый операционный плейбук для Telegram-ботов и Telegram-to-agent gateways |
 
-### Дизайн-скиллы
+### Дизайн и медиа
 
 | Скилл | Когда использовать |
 |-------|--------------------|
+| [art-director](./skills/art-director/) | Итеративный art direction, поиск визуального стиля, ветки генерации и графы решений |
 | [design-minimal](./skills/design-minimal/) | Читаемые standalone HTML-страницы: дашборды, брифы, раздатки, операционные карты, отчёты |
 | [ris-draft](./skills/ris-draft/) | Технические диаграммы в стиле плоского инженерного чертежа: архитектура, system flows, spec sheets |
 
@@ -62,6 +66,8 @@ graph LR
 | [task-routing](./skills/task-routing/) | Маршрутизация issues в правильный репо через конфиг |
 | [weekly-planning](./skills/weekly-planning/) | Ретро + бэклог — приоритизированные outcomes с матрицей Эйзенхауэра |
 | [weekly-retro](./skills/weekly-retro/) | Структурированное ретро: сбор данных, интервью с основателем, фиксация в issues |
+| [ris-manager](./skills/ris-manager/) | Синк работы сессии в GitHub Issues и cross-repo запросы по задачам |
+| [ris-prioritize](./skills/ris-prioritize/) | Ранжирование требований и бэклогов перед планированием |
 
 ## Other
 
