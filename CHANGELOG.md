@@ -7,17 +7,27 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.0.0] - 2026-06-06
+
 ### Added
+- **pm-prd** skill — structured PRD generation with B2C/B2B/internal/platform branching and 10-point quality checklist
+- **pm-user-stories** skill — Epic → User Stories with INVEST validation, Given-When-Then AC, and Story Map output
+- **pm-competitive** skill — competitor feature matrix, SWOT, Porter's Five Forces, and differentiation strategy
+- **pm-feedback** skill — feedback classification, theme clustering, sentiment/NPS analysis, Top-10 pain ranking
+- **pm-brainstorm** skill — SCAMPER / How Might We ideation with Impact/Effort screening
+- **pm-metrics** skill — product metrics review with North Star decomposition, funnel/retention diagnostics, OKR alignment
+- **pm-roadmap** skill — Now/Next/Later roadmap updates with delay attribution and scope-cut framework
+- Bilingual READMEs and illustrations for all new PM skills
 - Public repository hygiene: `SECURITY.md`, `CODE_OF_CONDUCT.md`, issue
   templates, Dependabot config, validation workflow, and
   `scripts/validate_repo.py`.
 - Skill README illustrations for every published skill, using deliberately clumsy MS Paint-style generated assets.
 
 ### Changed
+- **prioritize** renamed to **pm-prioritize** — folder, frontmatter, install paths, README tables; `/prioritize` kept as alias trigger
 - Moved `paperclip-api` from active skills to `archive/skills/paperclip-api`.
 - Renamed public skill identifiers `ris-manager` → `manager` and
-  `ris-prioritize` → `prioritize`, including folders, frontmatter, slash
-  triggers, install paths, and README tables.
+  `ris-prioritize` → `prioritize` (superseded in 2.0.0 by `pm-prioritize`).
 - Moved Claude Code, Codex, and single-skill installation guidance to the top
   of both READMEs.
 - Added a Codex marketplace manifest at `.agents/plugins/marketplace.json`.
@@ -27,6 +37,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added current `.codex-plugin/plugin.json` metadata while keeping
   `.claude-plugin` metadata for Claude Code compatibility.
 - Renamed **ris-draft** to **html-draft** across skill folder, docs, and invocation examples.
+- Added **Product Management Skills** section to both READMEs with workflow diagram.
+
+### Removed
+- Active skill path `skills/prioritize/` — replaced by `skills/pm-prioritize/`
 
 ## [1.20.0] - 2026-06-01
 

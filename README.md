@@ -70,7 +70,14 @@ Replace `cc-analytics` with any skill name from the table below.
 | [meeting-copilot](./skills/meeting-copilot/) | Live meeting dashboard: prepare, update from transcript chunks, close with decisions and follow-ups |
 | [readme-generator](./skills/readme-generator/) | Human-focused README files with proper structure |
 | [manager](./skills/manager/) | Bidirectional bridge between the current session and GitHub Issues |
-| [prioritize](./skills/prioritize/) | Rank backlogs with RICE, ICE, MoSCoW, or Kano and produce a decision log |
+| [pm-prioritize](./skills/pm-prioritize/) | Rank backlogs with RICE, ICE, MoSCoW, or Kano and produce a decision log |
+| [pm-prd](./skills/pm-prd/) | Structured PRD generation with product-type templates and quality checklist |
+| [pm-user-stories](./skills/pm-user-stories/) | Break Epics into INVEST-validated User Stories with Story Map output |
+| [pm-competitive](./skills/pm-competitive/) | Multi-dimensional competitor analysis with SWOT and differentiation strategy |
+| [pm-feedback](./skills/pm-feedback/) | Classify user feedback, cluster themes, and rank actionable pain points |
+| [pm-brainstorm](./skills/pm-brainstorm/) | Structured product ideation with SCAMPER and Impact/Effort screening |
+| [pm-metrics](./skills/pm-metrics/) | Product metrics review — trends, funnel/retention diagnostics, OKR alignment |
+| [pm-roadmap](./skills/pm-roadmap/) | Update Now/Next/Later roadmap with delay attribution and scope-cut framework |
 | [html-draft](./skills/html-draft/) | One self-contained HTML diagram in flat engineering blueprint style — architecture, flows, spec sheets |
 | [tg-bot-ops](./skills/tg-bot-ops/) | Reusable operations playbook for Telegram bots and Telegram-to-agent gateways |
 
@@ -81,6 +88,30 @@ Replace `cc-analytics` with any skill name from the table below.
 | [art-director](./skills/art-director/) | Iterative art direction, visual style search, generation branches, and decision graphs |
 | [design-minimal](./skills/design-minimal/) | Reading-first standalone HTML pages: dashboards, briefs, handouts, operating maps, reports |
 | [html-draft](./skills/html-draft/) | Technical diagrams in flat engineering blueprint style: architecture, system flows, spec sheets |
+
+### Product Management Skills
+
+| Skill | Use When |
+|-------|----------|
+| [pm-feedback](./skills/pm-feedback/) | Reviews, NPS exports, or support tickets need theme clustering and pain ranking |
+| [pm-competitive](./skills/pm-competitive/) | Entering a category, fundraising prep, or differentiation before a PRD |
+| [pm-brainstorm](./skills/pm-brainstorm/) | Structured ideation before quarterly planning or a new product bet |
+| [pm-prioritize](./skills/pm-prioritize/) | Backlog is too large — rank with RICE, ICE, MoSCoW, or Kano |
+| [pm-prd](./skills/pm-prd/) | Top requirements need a delivery-ready requirements document |
+| [pm-user-stories](./skills/pm-user-stories/) | PRD or Epic is ready to split into sprint-sized User Stories |
+| [pm-metrics](./skills/pm-metrics/) | Weekly/monthly metrics review, A/B reads, or OKR pacing checks |
+| [pm-roadmap](./skills/pm-roadmap/) | Sprint close or stakeholder review needs an updated Now/Next/Later roadmap |
+
+```mermaid
+graph LR
+    pmFeedback[pm-feedback] --> pmPrioritize[pm-prioritize]
+    pmCompetitive[pm-competitive] --> pmPrioritize
+    pmBrainstorm[pm-brainstorm] --> pmPrioritize
+    pmPrioritize --> pmPrd[pm-prd]
+    pmPrd --> pmUserStories[pm-user-stories]
+    pmMetrics[pm-metrics] --> pmRoadmap[pm-roadmap]
+    pmRoadmap --> pmPrioritize
+```
 
 ### Telegram
 
@@ -112,7 +143,7 @@ graph LR
 | [weekly-planning](./skills/weekly-planning/) | Retro findings + backlog → prioritized outcomes with Eisenhower matrix |
 | [weekly-retro](./skills/weekly-retro/) | Structured retrospective: gather data, interview founder, capture findings |
 | [manager](./skills/manager/) | Sync session work into GitHub Issues and query cross-repo task state |
-| [prioritize](./skills/prioritize/) | Rank requirements and backlogs before planning |
+| [pm-prioritize](./skills/pm-prioritize/) | Rank requirements and backlogs before planning |
 
 ## Other
 

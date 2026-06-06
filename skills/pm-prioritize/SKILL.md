@@ -1,9 +1,9 @@
 ---
-name: prioritize
-description: Use when ranking a list of requirements, features, or backlog items using RICE / ICE / MoSCoW / Kano. Built-in decision tree picks the right framework based on data availability and decision context. Output is a transparent matrix, 2×2 Impact/Effort quadrant, and a Sprint allocation proposal. User-invoked only — do NOT auto-trigger. Triggers on "/prioritize", "приоритизация", "ранжируй бэклог", "RICE-анализ", "prioritize requirements", "RICE", "ICE", "MoSCoW", "Kano", "rank backlog".
+name: pm-prioritize
+description: Use when ranking a list of requirements, features, or backlog items using RICE / ICE / MoSCoW / Kano. Built-in decision tree picks the right framework based on data availability and decision context. Output is a transparent matrix, 2×2 Impact/Effort quadrant, and a Sprint allocation proposal. User-invoked only — do NOT auto-trigger. Triggers on "/pm-prioritize", "/prioritize", "приоритизация", "ранжируй бэклог", "RICE-анализ", "prioritize requirements", "RICE", "ICE", "MoSCoW", "Kano", "rank backlog".
 ---
 
-# prioritize — Rank requirements with RICE / ICE / MoSCoW / Kano
+# pm-prioritize — Rank requirements with RICE / ICE / MoSCoW / Kano
 
 Part of the Personal Corp framework — running a one-person business through AI agents.
 
@@ -13,7 +13,7 @@ Rank a list of requirements using a structured framework. A built-in decision tr
 
 | Field | Required | Notes |
 |---|---|---|
-| Requirement list | yes | Name + brief description; ≥ 3 items. Can take a pain-point list from any feedback-analysis skill or a feature list from any PRD skill |
+| Requirement list | yes | Name + brief description; ≥ 3 items. Can take a pain-point list from `/pm-feedback` or a feature list from `/pm-prd` |
 | Framework | no | RICE / ICE / MoSCoW / Kano; auto-recommended if not given |
 | Business goal | no | Current focus (growth / retention / revenue / efficiency); affects weighting |
 | Resource constraint | no | Available dev capacity (person-days or Story Points) |
@@ -188,5 +188,5 @@ Score 1-10 on each dimension. **ICE Score = I × C × E / 10**.
 
 - [`weekly-planning`](../weekly-planning/) — uses the ranked backlog from this skill to pick weekly OKRs / outcomes. Prioritization **feeds** OKR selection, not replaces it.
 - [`weekly-retro`](../weekly-retro/) — feeds the next backlog with retro findings and carry-over items
-- `/pm-user-stories` — top-priority requirements → break into Stories (if installed)
-- `/pm-prd` — Must-Have requirements → write PRDs (if installed)
+- `/pm-user-stories` — top-priority requirements → break into Stories
+- `/pm-prd` — Must-Have requirements → write PRDs

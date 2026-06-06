@@ -1,4 +1,4 @@
-# Prioritize Skill
+# pm-prioritize Skill
 
 ![Иллюстрация скилла](assets/illustration.png)
 
@@ -29,7 +29,7 @@
 ## Установка
 
 ```bash
-cp -r skills/prioritize ~/.claude/skills/
+cp -r skills/pm-prioritize ~/.claude/skills/
 ```
 
 После этого скилл доступен в Claude Code.
@@ -54,7 +54,7 @@ cp -r skills/prioritize ~/.claude/skills/
 
 > «Приоритизируй мой бэклог. Список в `docs/backlog.md`, ресурс — 20 person-days в спринт, фокус квартала — retention.»
 
-Или через slash-команду: `/prioritize`
+Или через slash-команду: `/pm-prioritize` (алиас: `/prioritize`)
 
 Или коротко, если конфиг уже заполнен:
 
@@ -78,6 +78,8 @@ cp -r skills/prioritize ~/.claude/skills/
 
 - **`weekly-planning`** — берёт ранжированный бэклог отсюда и выбирает по нему недельные OKR / outcomes. Приоритизация **питает** выбор OKR, не заменяет его.
 - **`weekly-retro`** — поставляет в бэклог новые задачи из ретро и переходящие пункты с прошлой недели.
+- **`/pm-prd`** — писать PRD для Must-Have требований
+- **`/pm-user-stories`** — разбивать top-priority требования на Stories
 
 ## См. также
 

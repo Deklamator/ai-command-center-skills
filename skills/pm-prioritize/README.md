@@ -1,4 +1,4 @@
-# Prioritize Skill
+# pm-prioritize Skill
 
 ![Skill illustration](assets/illustration.png)
 
@@ -29,7 +29,7 @@ Not for: a single task (nothing to prioritize), crisis decisions with no time to
 ## Installation
 
 ```bash
-cp -r skills/prioritize ~/.claude/skills/
+cp -r skills/pm-prioritize ~/.claude/skills/
 ```
 
 The skill is then available in Claude Code.
@@ -54,7 +54,7 @@ Tell the agent in natural language:
 
 > "Prioritize my backlog. List is in `docs/backlog.md`, capacity is 20 person-days per Sprint, quarter focus is retention."
 
-Or use the slash command: `/prioritize`
+Or use the slash command: `/pm-prioritize` (alias: `/prioritize`)
 
 Or, if config is set:
 
@@ -78,6 +78,8 @@ What happens:
 
 - **`weekly-planning`** — takes the ranked backlog from this skill and picks weekly OKRs / outcomes. Prioritization **feeds** OKR selection, doesn't replace it.
 - **`weekly-retro`** — feeds the next backlog with retro findings and carry-over items.
+- **`/pm-prd`** — write PRDs for Must-Have requirements
+- **`/pm-user-stories`** — break top-priority requirements into Stories
 
 ## See also
 

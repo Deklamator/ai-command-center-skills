@@ -68,7 +68,14 @@ Use Personal Corp skills to plan my week.
 | [meeting-copilot](./skills/meeting-copilot/) | Live dashboard для встреч: подготовка, обновление из транскрипта, закрытие с решениями и follow-up |
 | [readme-generator](./skills/readme-generator/) | Человеко-ориентированные README с правильной структурой |
 | [manager](./skills/manager/) | Двусторонний мост между текущей сессией и GitHub Issues |
-| [prioritize](./skills/prioritize/) | Ранжирование бэклогов через RICE, ICE, MoSCoW или Kano |
+| [pm-prioritize](./skills/pm-prioritize/) | Ранжирование бэклогов через RICE, ICE, MoSCoW или Kano |
+| [pm-prd](./skills/pm-prd/) | Генерация структурированного PRD с шаблонами под тип продукта |
+| [pm-user-stories](./skills/pm-user-stories/) | Разбивка Epic на User Stories с INVEST и Story Map |
+| [pm-competitive](./skills/pm-competitive/) | Конкурентный анализ: SWOT, feature-матрица, дифференциация |
+| [pm-feedback](./skills/pm-feedback/) | Классификация фидбека, кластеризация тем, ранжирование болей |
+| [pm-brainstorm](./skills/pm-brainstorm/) | Структурированный продуктовый брейншторм с SCAMPER |
+| [pm-metrics](./skills/pm-metrics/) | Ревью продуктовых метрик, воронка/retention, OKR alignment |
+| [pm-roadmap](./skills/pm-roadmap/) | Обновление roadmap Now/Next/Later с атрибуцией задержек |
 | [html-draft](./skills/html-draft/) | Одна HTML-диаграмма в стиле плоского инженерного чертежа — архитектура, потоки, spec sheets |
 | [tg-bot-ops](./skills/tg-bot-ops/) | Переиспользуемый операционный плейбук для Telegram-ботов и Telegram-to-agent gateways |
 
@@ -79,6 +86,30 @@ Use Personal Corp skills to plan my week.
 | [art-director](./skills/art-director/) | Итеративный art direction, поиск визуального стиля, ветки генерации и графы решений |
 | [design-minimal](./skills/design-minimal/) | Читаемые standalone HTML-страницы: дашборды, брифы, раздатки, операционные карты, отчёты |
 | [html-draft](./skills/html-draft/) | Технические диаграммы в стиле плоского инженерного чертежа: архитектура, system flows, spec sheets |
+
+### Продуктовые скиллы
+
+| Скилл | Когда использовать |
+|-------|--------------------|
+| [pm-feedback](./skills/pm-feedback/) | Отзывы, NPS или саппорт-тикеты — нужна кластеризация тем и ранжирование болей |
+| [pm-competitive](./skills/pm-competitive/) | Вход в категорию, fundraising или дифференциация перед PRD |
+| [pm-brainstorm](./skills/pm-brainstorm/) | Структурированная дивергенция перед квартальным планированием |
+| [pm-prioritize](./skills/pm-prioritize/) | Бэклог слишком большой — RICE, ICE, MoSCoW или Kano |
+| [pm-prd](./skills/pm-prd/) | Top-требованиям нужен PRD для ревью и разработки |
+| [pm-user-stories](./skills/pm-user-stories/) | PRD или Epic готов к разбивке на User Stories |
+| [pm-metrics](./skills/pm-metrics/) | Еженедельный/месячный обзор метрик, A/B, pacing OKR |
+| [pm-roadmap](./skills/pm-roadmap/) | Закрытие спринта или стейкхолдер-ревью — обновить roadmap |
+
+```mermaid
+graph LR
+    pmFeedback[pm-feedback] --> pmPrioritize[pm-prioritize]
+    pmCompetitive[pm-competitive] --> pmPrioritize
+    pmBrainstorm[pm-brainstorm] --> pmPrioritize
+    pmPrioritize --> pmPrd[pm-prd]
+    pmPrd --> pmUserStories[pm-user-stories]
+    pmMetrics[pm-metrics] --> pmRoadmap[pm-roadmap]
+    pmRoadmap --> pmPrioritize
+```
 
 ### Telegram
 
@@ -110,7 +141,7 @@ graph LR
 | [weekly-planning](./skills/weekly-planning/) | Ретро + бэклог — приоритизированные outcomes с матрицей Эйзенхауэра |
 | [weekly-retro](./skills/weekly-retro/) | Структурированное ретро: сбор данных, интервью с основателем, фиксация в issues |
 | [manager](./skills/manager/) | Синк работы сессии в GitHub Issues и cross-repo запросы по задачам |
-| [prioritize](./skills/prioritize/) | Ранжирование требований и бэклогов перед планированием |
+| [pm-prioritize](./skills/pm-prioritize/) | Ранжирование требований и бэклогов перед планированием |
 
 ## Other
 
