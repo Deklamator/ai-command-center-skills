@@ -38,8 +38,66 @@ Allowed local targets:
 - `0_hq/grillme/`
 - `0_hq/decisions/`
 - `0_hq/architecture/`
+- `0_hq/ideas/<idea_id>/grillme.md` through the AI Command Center idea-ledger bridge
 
 External writes require explicit approval.
+
+## AI Command Center idea-ledger bridge
+
+When this skill is invoked as the AI Command Center `\grillme` workflow for an existing idea, the GrillMe capture must be written to the local Idea Ledger before the response claims that the interview state was captured, recorded, `зафиксировано`, `сохранено`, or fixed into ledger.
+
+Use the existing `idea_id`. If the user has not provided one, read the current idea artifact or ask for the idea anchor before claiming capture.
+
+If local command execution is available, run the bridge from the AI Command Center repository root:
+
+```bash
+python tools\sm\sm.py idea-ledger manual-capture --command grillme --idea-id "<idea_id>" --title "<title>" --text "<GrillMe questions/options/selected direction>"
+```
+
+If GrillMe has already written a local markdown file with the full interview content, this file-based bridge is also allowed:
+
+```bash
+python tools\sm\sm.py idea-ledger capture-grillme --idea-id "<idea_id>" --title "<title>" --grillme-file "<path>"
+```
+
+Only claim capture when the command output includes both:
+
+```text
+artifact_written: yes
+status: repo_artifact_created
+```
+
+The user-facing response must include:
+
+- `artifact_path`
+- `local_repo_path`
+- `github_url_status`
+- `future_github_url`
+- `next_gate`
+
+If the ledger command cannot be run or does not confirm the artifact, say exactly:
+
+```text
+Session state captured.
+Repo artifact not created yet.
+Next gate: approve local ledger capture.
+```
+
+Local-only safety boundary: this bridge may create or update `0_hq/ideas/<idea_id>/grillme.md` only. It must not create GitHub Issues, update GitHub Projects, launch executors, push, create PRs, merge, tag, deploy, install hooks, run Graphify update, or touch production systems.
+
+Example bridge for Hermes/BazaAI:
+
+```bash
+python tools\sm\sm.py idea-ledger manual-capture --command grillme --idea-id "idea-bazaai-hermes-integration" --title "GrillMe Hermes to BazaAI" --text "<GrillMe questions/options/selected direction>"
+```
+
+Expected artifact:
+
+```text
+0_hq/ideas/idea-bazaai-hermes-integration/grillme.md
+```
+
+Next gate: `manager`.
 
 ## Interview modes
 

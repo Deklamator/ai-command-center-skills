@@ -17,6 +17,69 @@ One pipeline: your voice → a provenance-tracked folder in your ideas repo → 
 
 This skill is **self-contained** — it inlines the folder structure, status enum, and provenance formats below. You don't need any external canon file.
 
+## AI Command Center idea-ledger bridge
+
+When this skill is invoked as the AI Command Center `\idea` workflow, the local Idea Ledger is the first durable capture point.
+
+Before saying `captured`, `recorded`, `зафиксировано`, `сохранено`, or `fixed into ledger`, derive or reuse:
+
+- `idea_id` in the form `idea-<kebab-case-slug>`;
+- a short human `title`;
+- the raw idea text to preserve.
+
+Then run the bridge from the AI Command Center repository root if local command execution is available:
+
+```bash
+python tools\sm\sm.py idea-ledger manual-capture --command idea --idea-id "<idea_id>" --title "<title>" --text "<captured idea text>"
+```
+
+Only claim capture when the command output includes both:
+
+```text
+artifact_written: yes
+status: repo_artifact_created
+```
+
+The user-facing response must include the bridge location metadata:
+
+- `artifact_path`
+- `local_repo_path`
+- `github_url_status`
+- `future_github_url`
+- `next_gate`
+
+If local command execution is not available, or the bridge command fails, do not fake execution and do not claim that a repo artifact exists. Say exactly:
+
+```text
+Session state captured.
+Repo artifact not created yet.
+Next gate: approve local ledger capture.
+```
+
+Local-only safety boundary: this bridge may create or update `0_hq/ideas/<idea_id>/idea.md` only. It must not create GitHub Issues, update GitHub Projects, launch executors, push, create PRs, merge, tag, deploy, install hooks, run Graphify update, or touch production systems.
+
+Example:
+
+Input:
+
+```text
+\idea Hermes  BazaAI
+```
+
+Expected bridge:
+
+```bash
+python tools\sm\sm.py idea-ledger manual-capture --command idea --idea-id "idea-bazaai-hermes-integration" --title "Hermes integration for BazaAI" --text "Hermes should be integrated into BazaAI / PromBaza AI as an understanding gateway before actions."
+```
+
+Expected artifact:
+
+```text
+0_hq/ideas/idea-bazaai-hermes-integration/idea.md
+```
+
+Next gate: `grillme`.
+
 ## What this skill is NOT for
 
 - **Mining ideas out of a transcript / meeting / thread** — that's bulk extraction from a source. Use a separate extraction skill for that. This skill captures ONE idea the user is voicing right now.
