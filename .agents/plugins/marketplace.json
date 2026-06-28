@@ -8,7 +8,7 @@
       "name": "personal-corp-skills",
       "source": {
         "source": "local",
-        "path": "./plugins/personal-corp-skills"
+        "path": "."
       },
       "policy": {
         "installation": "AVAILABLE",
