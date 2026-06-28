@@ -181,3 +181,7 @@ MIT
 
 Секреты, утечки приватных данных и exploitable behavior отправляйте приватно.
 См. [SECURITY.md](SECURITY.md).
+
+### grillme
+
+- [grillme](./skills/grillme/) - кристаллизует идеи CEO в дерево решений, локальное dossier, Mermaid-диаграммы и preview GitHub Issue.

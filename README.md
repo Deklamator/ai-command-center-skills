@@ -183,3 +183,7 @@ MIT
 
 Please report secrets, private data exposure, or exploitable behavior privately.
 See [SECURITY.md](SECURITY.md).
+
+### grillme
+
+- [grillme](./skills/grillme/) - crystallizes CEO ideas into decision trees, local dossiers, Mermaid diagrams, and GitHub Issue previews.
