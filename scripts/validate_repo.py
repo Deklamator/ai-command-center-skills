@@ -239,6 +239,8 @@ def validate_public_hygiene() -> None:
             fail(f"missing required public repo file: {rel}")
 
     for path in ROOT.rglob("*"):
+        if "__pycache__" in path.parts or path.suffix == ".pyc":
+            continue
         if ".git" in path.parts or not path.is_file():
             continue
         if path.suffix in {".png", ".jpg", ".jpeg", ".gif", ".webp", ".pdf"}:
@@ -248,12 +250,57 @@ def validate_public_hygiene() -> None:
             fail(f"{path.relative_to(ROOT)} still contains legacy repo name {LEGACY_NAME}")
 
 
+def validate_idea_ledger_bridge_contract() -> None:
+    required_by_skill = {
+        "idea": [
+            "manual-capture --command idea",
+            "0_hq/ideas/<idea_id>/idea.md",
+            "idea-bazaai-hermes-integration",
+            "Hermes integration for BazaAI",
+        ],
+        "grillme": [
+            "manual-capture --command grillme",
+            "capture-grillme",
+            "0_hq/ideas/<idea_id>/grillme.md",
+            "0_hq/ideas/idea-bazaai-hermes-integration/grillme.md",
+        ],
+        "manager": [
+            "manual-capture --command manager",
+            "0_hq/ideas/<idea_id>/manager-decision.md",
+            "0_hq/ideas/idea-bazaai-hermes-integration/manager-decision.md",
+            "Hermes MVP for BazaAI understanding gateway",
+        ],
+    }
+    shared_required = [
+        "artifact_written: yes",
+        "status: repo_artifact_created",
+        "artifact_path",
+        "local_repo_path",
+        "github_url_status",
+        "future_github_url",
+        "next_gate",
+        "Session state captured.",
+        "Repo artifact not created yet.",
+        "Next gate: approve local ledger capture.",
+        "зафиксировано",
+        "сохранено",
+    ]
+
+    for skill, snippets in required_by_skill.items():
+        path = ROOT / "skills" / skill / "SKILL.md"
+        text = read(path)
+        for snippet in snippets + shared_required:
+            if snippet not in text:
+                fail(f"{path.relative_to(ROOT)} is missing idea-ledger bridge snippet: {snippet}")
+
+
 def main() -> None:
     skill_names = validate_skills()
     validate_archived_skills(skill_names)
     validate_readme_skill_links(skill_names)
     validate_plugin_metadata()
     validate_public_hygiene()
+    validate_idea_ledger_bridge_contract()
     print(f"OK: validated {len(skill_names)} skills and public repo metadata")
 
 

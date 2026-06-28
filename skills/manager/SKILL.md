@@ -21,6 +21,57 @@ Bridges session work and GitHub issues in both directions. GitHub issues are the
 
 **Manager is the canonical issue workflow.** Do not fall back to a generic issue helper for these operations — manager owns the read-modify-write contract, the invariants, and the Project sync.
 
+## AI Command Center idea-ledger bridge
+
+When Manager is used as the AI Command Center `\manager` lifecycle step for an idea, the manager decision package must be written to the local Idea Ledger before the response claims that the decision was captured, recorded, `зафиксировано`, `сохранено`, or fixed into ledger.
+
+Use the existing `idea_id`. If the current idea has no anchor, stop and ask for the idea anchor or run the prior `\idea` / `\grillme` ledger step first.
+
+If local command execution is available, run the bridge from the AI Command Center repository root:
+
+```bash
+python tools\sm\sm.py idea-ledger manual-capture --command manager --idea-id "<idea_id>" --title "<title>" --text "<manager decision package>"
+```
+
+Only claim capture when the command output includes both:
+
+```text
+artifact_written: yes
+status: repo_artifact_created
+```
+
+The user-facing response must include:
+
+- `artifact_path`
+- `local_repo_path`
+- `github_url_status`
+- `future_github_url`
+- `next_gate`
+
+If the ledger command cannot be run or does not confirm the artifact, say exactly:
+
+```text
+Session state captured.
+Repo artifact not created yet.
+Next gate: approve local ledger capture.
+```
+
+Local-only safety boundary: this bridge may create or update `0_hq/ideas/<idea_id>/manager-decision.md` only. It must not create GitHub Issues, update GitHub Projects, launch executors, push, create PRs, merge, tag, deploy, install hooks, run Graphify update, or touch production systems.
+
+Example bridge for Hermes/BazaAI:
+
+```bash
+python tools\sm\sm.py idea-ledger manual-capture --command manager --idea-id "idea-bazaai-hermes-integration" --title "Hermes MVP for BazaAI understanding gateway" --text "<Manager decision package>"
+```
+
+Expected artifact:
+
+```text
+0_hq/ideas/idea-bazaai-hermes-integration/manager-decision.md
+```
+
+Next gate: `prd-preview` or `tasks-preview`.
+
 ## Setup
 
 Before first use, define this in your project's `CLAUDE.md`:
