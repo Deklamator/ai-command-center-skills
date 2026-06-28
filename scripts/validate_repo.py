@@ -180,11 +180,12 @@ def validate_plugin_metadata() -> None:
     if codex_entry.get("name") != plugin.get("name"):
         fail(".agents/plugins/marketplace.json plugin name must match plugin name")
     source = codex_entry.get("source")
-    if not isinstance(source, dict) or source.get("source") != "local" or source.get("path") != "./plugins/personal-corp-skills":
-        fail(".agents/plugins/marketplace.json plugin source must point to ./plugins/personal-corp-skills")
-    plugin_link = ROOT / "plugins" / "personal-corp-skills"
-    if not plugin_link.is_symlink() or plugin_link.resolve() != ROOT:
-        fail("plugins/personal-corp-skills must be a symlink to the repo root for Codex marketplace discovery")
+    if not isinstance(source, dict) or source.get("source") != "local" or source.get("path") != ".":
+        fail(".agents/plugins/marketplace.json plugin source must point to the repository root")
+    if not (ROOT / ".codex-plugin" / "plugin.json").exists():
+        fail("repository root must contain .codex-plugin/plugin.json for Codex marketplace discovery")
+    if not (ROOT / "skills").is_dir():
+        fail("repository root must contain skills/ for Codex marketplace discovery")
     policy = codex_entry.get("policy")
     if not isinstance(policy, dict) or policy.get("installation") != "AVAILABLE" or policy.get("authentication") != "ON_INSTALL":
         fail(".agents/plugins/marketplace.json plugin policy must be AVAILABLE/ON_INSTALL")
